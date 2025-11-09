@@ -1,0 +1,1 @@
+# Strona Nikodem – start
