@@ -5,46 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nikodem Szlęzak</title>
     <style>
-      body {
+      :root {
+        --bg: #0b0b0b;
+        --text: #f8f8f8;
+        --accent: #c6ff00;
+      }
+
+      html, body {
         margin: 0;
         padding: 0;
-        background-color: #0d0d0d;
-        color: #f2f2f2;
-        font-family: Arial, sans-serif;
+        height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
+        justify-content: center;
+        flex-direction: column;
         text-align: center;
+        overflow: hidden;
       }
+
       h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 3rem;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        margin-bottom: 0.3em;
+        animation: fadeIn 1s ease forwards;
       }
-      p {
-        color: #9a9a9a;
+
+      p.bio {
+        font-size: 1.1rem;
+        color: #bcbcbc;
+        margin-bottom: 2em;
+        animation: fadeIn 1.2s ease forwards;
       }
+
       .links a {
-        display: inline-block;
-        margin: 10px;
-        color: #b6ff00;
+        display: block;
+        font-size: 1.2rem;
+        color: var(--accent);
         text-decoration: none;
-        border-bottom: 1px solid #b6ff00;
+        margin: 10px 0;
+        transition: opacity 0.3s ease;
+        opacity: 0.85;
+        animation: fadeIn 1.3s ease forwards;
       }
+
       .links a:hover {
-        opacity: 0.8;
+        opacity: 1;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 25px;
+        font-size: 0.8rem;
+        color: #666;
+        letter-spacing: 0.05em;
+        animation: fadeIn 2s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* delikatny efekt pulsującego światła */
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(198,255,0,0.1) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        filter: blur(60px);
+        animation: pulse 6s infinite ease-in-out;
+        z-index: 0;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
       }
     </style>
   </head>
   <body>
-    <h1>Nikodem Szlęzak</h1>
-    <p>Portfolio / Kontakt</p>
-    <div class="links">
-      <a href="mailto:nikodemszlezak@gmail.com">Email</a>
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-      <a href="https://open.spotify.com/" target="_blank">Spotify</a>
-    </div>
+    <div class="glow"></div>
+    <main>
+      <h1>Nikodem Szlęzak</h1>
+      <p class="bio">muzyk • twórca • projekty audiowizualne</p>
+      <div class="links">
+        <a href="mailto:nikodemszlezak@gmail.com">kontakt</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://spotify.com" target="_blank">Spotify</a>
+        <a href="#" target="_blank">sklep (wkrótce)</a>
+      </div>
+    </main>
+    <footer>© 2025 Nikodem Szlęzak</footer>
   </body>
 </html>
