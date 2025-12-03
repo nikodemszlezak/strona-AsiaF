@@ -4,114 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
     <title>asiaf_kornelia</title>
-    <style>
-      :root {
-        --bg: #0b0b0b;
-        --text: #f8f8f8;
-        --accent: #c6ff00;
-      }
-
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background: var(--bg);
-        color: var(--text);
-        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        overflow: hidden;
-      }
-
-      h1 {
-        font-size: 3rem;
-        letter-spacing: -0.02em;
-        font-weight: 600;
-        margin-bottom: 0.3em;
-        animation: fadeIn 1s ease forwards;
-      }
-
-      p.bio {
-        font-size: 1.1rem;
-        color: #bcbcbc;
-        margin-bottom: 2em;
-        animation: fadeIn 1.2s ease forwards;
-      }
-
-      .links a {
-        display: block;
-        font-size: 1.2rem;
-        color: var(--accent);
-        text-decoration: none;
-        margin: 10px 0;
-        transition: opacity 0.3s ease;
-        opacity: 0.85;
-        animation: fadeIn 1.3s ease forwards;
-      }
-
-      .links a:hover {
-        opacity: 1;
-      }
-
-      footer {
-        position: absolute;
-        bottom: 25px;
-        font-size: 0.8rem;
-        color: #666;
-        letter-spacing: 0.05em;
-        animation: fadeIn 2s ease forwards;
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      /* delikatny efekt pulsującego światła */
-      .glow {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 200px;
-        height: 200px;
-        background: radial-gradient(circle, rgba(198,255,0,0.1) 0%, transparent 70%);
-        transform: translate(-50%, -50%);
-        filter: blur(60px);
-        animation: pulse 6s infinite ease-in-out;
-        z-index: 0;
-      }
-
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-        50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
-      }
-
-      main {
-        position: relative;
-        z-index: 1;
-      }
-    </style>
   </head>
   <body>
-    <div class="glow"></div>
-    <main>
-      <h1>asiaf_kornelia</h1>
-      <p class="bio">🦔 jestem tu, by was bawić i dezorientować 🎠</p>
-      <div class="links">
-        <a href="mailto:hi@asiaf.net">kontakt</a>
-        <a href="https://www.instagram.com/asiaf_kornelia/" target="_blank">instagram</a>
-        <a href="https://www.tiktok.com/@asiaf_kornelia" target="_blank">tiktok</a>
-        <a href="https://www.youtube.com/@asiaf_kornelia" target="_blank">youtube</a>
-        <a href="https://www.twitch.tv/asiaf_kornelia" target="_blank">twitch</a>
-        <a href="https://discord.com/invite/2psHhXfHqM" target="_blank">discord</a>
-        <a href="https://www.instagram.com/psotko.studio/" target="_blank">psotko.studio</a>
-        <a href="#" target="_blank">sklep (wkrótce)</a>
-      </div>
-    </main>
-    <footer>© 2025 asiaf_kornelia</footer>
+    <div class="scene">
+      <div class="static-noise"></div>
+      <div class="halftone-dot"></div>
+      <div class="scribble one"></div>
+      <div class="scribble two"></div>
+      <div class="tear left"></div>
+      <div class="tear right"></div>
+      <div class="blobs blob-left"></div>
+      <div class="blobs blob-right"></div>
+      <main>
+        <h1>asiaf_kornelia</h1>
+        <p class="bio">🦔 jestem tu, by was bawić i dezorientować 🎠</p>
+        <div class="links">
+          <a href="mailto:hi@asiaf.net">kontakt</a>
+          <a href="https://www.instagram.com/asiaf_kornelia/" target="_blank">instagram</a>
+          <a href="https://www.tiktok.com/@asiaf_kornelia" target="_blank">tiktok</a>
+          <a href="https://www.youtube.com/@asiaf_kornelia" target="_blank">youtube</a>
+          <a href="https://www.twitch.tv/asiaf_kornelia" target="_blank">twitch</a>
+          <a href="https://discord.com/invite/2psHhXfHqM" target="_blank">discord</a>
+          <a href="https://www.instagram.com/psotko.studio/" target="_blank">psotko.studio</a>
+          <a href="#" target="_blank">sklep (wkrótce)</a>
+        </div>
+      </main>
+      <footer>© 2025 asiaf_kornelia</footer>
+    </div>
   </body>
 </html>
