@@ -43,8 +43,22 @@
       // Jeśli urządzenie nie obsługuje hover, oznaczamy body i uruchamiamy animacje startowe.
       (function () {
         const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches || "ontouchstart" in window;
-        if (isTouch) {
-          document.body.classList.add("is-touch");
+        const blob = document.querySelector(".blob-about");
+        if (isTouch) document.body.classList.add("is-touch");
+        if (blob && !isTouch) {
+          blob.classList.add("blob-animating");
+          blob.addEventListener("animationend", () => {
+            blob.classList.remove("blob-animating");
+          }, { once: true });
+        } else if (blob && isTouch) {
+          let hoverApplied = false;
+          const applyHoverState = () => {
+            if (hoverApplied) return;
+            hoverApplied = true;
+            blob.classList.add("touch-hover");
+          };
+          blob.addEventListener("animationend", applyHoverState, { once: true });
+          setTimeout(applyHoverState, 1200);
         }
       })();
     </script>
