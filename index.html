@@ -39,5 +39,14 @@
       </main>
       <footer>© 2025 asiaf_kornelia</footer>
     </div>
+    <script>
+      // Jeśli urządzenie nie obsługuje hover, oznaczamy body i uruchamiamy animacje startowe.
+      (function () {
+        const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches || "ontouchstart" in window;
+        if (isTouch) {
+          document.body.classList.add("is-touch");
+        }
+      })();
+    </script>
   </body>
 </html>

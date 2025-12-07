@@ -26,5 +26,13 @@
       </main>
       <footer>© 2025 asiaf_kornelia</footer>
     </div>
+    <script>
+      (function () {
+        const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches || "ontouchstart" in window;
+        if (isTouch) {
+          document.body.classList.add("is-touch");
+        }
+      })();
+    </script>
   </body>
 </html>

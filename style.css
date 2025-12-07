@@ -253,8 +253,8 @@ body {
   left: calc(50% + 8px);
   top: calc(62% - 90px);
   display: block;
-  width: 15%;
-  max-width: 50px;
+  width: 19%;
+  max-width: 60px;
   height: auto;
   transform: translate(-50%, -50%);
   transition: opacity 0.18s ease, transform 0.22s ease, filter 0.2s ease;
@@ -263,11 +263,152 @@ body {
   mix-blend-mode: normal;
 }
 
-.mouth-open { opacity: 0; }
-.blob-about:hover .mouth-open { opacity: 1; transform: translate(-50%, -70%) scale(0.8); }
-.blob-about:hover .mouth-closed { opacity: 0; transform: translate(-50%, -92%) scale(0.4); }
+.mouth-open {
+  opacity: 1;
+  transform: translate(-50%, -70%) scale(0.6);
+  filter: brightness(1.15) saturate(1.1) contrast(1.02);
+}
+
+.mouth-closed {
+  opacity: 0;
+  transform: translate(-50%, -92%) scale(0.4);
+}
+
+.blob-about:hover .mouth-open { opacity: 0; }
+.blob-about:hover .mouth-closed {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
 .blob-about:hover .mouth {
   filter: brightness(1.15) saturate(1.1) contrast(1.02);
+}
+
+.is-touch { --mouth-open-delay: 0.95s; }
+
+@media (hover: hover) and (pointer: fine) {
+  .blob-about.blob-animating {
+    opacity: 0;
+    transform: translateX(120%) rotate(5deg);
+    animation: blobSlideInDesktop 0.9s ease-out 0.08s forwards;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) {
+  .blob-about.blob-animating {
+    opacity: 1;
+    transform: rotate(5deg);
+    animation: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .scene {
+    padding: 34px 16px 120px;
+  }
+
+  .blob-about {
+    left: 50%;
+    right: auto;
+    bottom: 18px;
+    width: min(82vw, 260px);
+    transform: translateX(-50%) rotate(5deg);
+  }
+
+  .blob-about:hover {
+    transform: translateX(-50%) translateY(-4px) scale(1.05) rotate(12deg);
+  }
+
+  .is-touch .blob-about.touch-hover {
+    transform: translateX(-50%) translateY(-4px) scale(1.05) rotate(12deg);
+  }
+
+  .is-touch .blob-about.touch-hover .mouth-open { opacity: 0; }
+  .is-touch .blob-about.touch-hover .mouth-closed {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .is-touch .blob-about.touch-hover .mouth {
+    filter: brightness(1.15) saturate(1.1) contrast(1.02);
+  }
+
+  .mouth {
+    left: calc(50% + 8px);
+    top: calc(62% - 72px);
+    width: 24%;
+    max-width: 52px;
+  }
+
+  .is-touch .mouth-open {
+    opacity: 1;
+    animation: none;
+  }
+
+  .is-touch .mouth-closed {
+    opacity: 0;
+    animation: none;
+  }
+
+  .is-touch .blob-about {
+    transform: translateX(-50%) translateY(140%) rotate(0deg) scale(0.9);
+    animation: blobSlideIn 0.9s ease-out 0.05s forwards;
+  }
+}
+
+@keyframes blobSlideInDesktop {
+  0% { transform: translateX(140%) rotate(2deg) scale(0.92); opacity: 0; }
+  55% { transform: translateX(-8%) rotate(7deg) scale(1.05); opacity: 1; }
+  100% { transform: rotate(5deg) scale(1); opacity: 1; }
+}
+
+@keyframes blobSlideIn {
+  0% { transform: translateX(-50%) translateY(140%) rotate(0deg) scale(0.9); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: translateX(-50%) translateY(0) rotate(5deg) scale(1); opacity: 1; }
+}
+
+@keyframes mouthPop {
+  0% { opacity: 0; transform: translate(-50%, -70%) scale(0.6); }
+  100% { opacity: 1; transform: translate(-50%, -70%) scale(0.8); }
+}
+
+@keyframes mouthClose {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -90%) scale(0.4); }
+}
+
+@media (max-width: 720px) {
+  .scene {
+    padding: 34px 16px 96px;
+  }
+
+  .blob-about {
+    left: 50%;
+    right: auto;
+    bottom: 16px;
+    width: min(82vw, 260px);
+    transform: translateX(-50%) rotate(5deg);
+  }
+
+  .blob-about:hover {
+    transform: translateX(-50%) translateY(-6px) scale(1.05) rotate(15deg);
+  }
+
+  .mouth {
+    left: calc(50% + 8px);
+    top: calc(62% - 72px);
+    width: 24%;
+    max-width: 52px;
+  }
+
+  .is-touch .mouth-open {
+    opacity: 1;
+    animation: none;
+  }
+
+  .is-touch .mouth-closed {
+    opacity: 0;
+    animation: none;
+  }
 }
 
 
@@ -292,7 +433,7 @@ body {
 
 main {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   padding: 32px 36px;
   background: rgba(232,214,199,0.92);
   border: 2px solid rgba(31,47,107,0.22);
