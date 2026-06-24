@@ -1,1 +1,1 @@
-# © 2026 asiaf kornelia
+# 2026 asiaf kornelia 
