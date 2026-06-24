@@ -303,6 +303,46 @@ p.bio {
   background: linear-gradient(90deg, rgba(31,47,107,0.16), rgba(216,124,91,0.18));
 }
 
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 40;
+  width: max-content;
+  max-width: min(220px, calc(100vw - 24px));
+  padding: 7px 10px 8px;
+  color: var(--navy);
+  background: rgba(232,214,199,0.94);
+  clip-path: polygon(5% 20%, 16% 8%, 42% 3%, 72% 8%, 96% 20%, 94% 80%, 70% 96%, 38% 91%, 10% 96%, 2% 62%);
+  filter: drop-shadow(4px 5px 0 rgba(31,47,107,0.14));
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 4px) rotate(-1deg);
+  transition: opacity 80ms ease, transform 80ms ease;
+  transition-delay: 40ms;
+}
+
+[data-tooltip]:hover::before,
+[data-tooltip]:focus-visible::before {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(-1deg);
+}
+
+.asset-contact[data-tooltip]::before {
+  top: calc(100% + 10px);
+  bottom: auto;
+}
+
 .about-page .scene {
   padding: 64px 24px;
 }
@@ -492,23 +532,26 @@ p.bio {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  width: min(360px, calc(100vw - 32px));
+  gap: 10px;
+  width: min(460px, calc(100vw - 32px));
   height: auto;
   margin: clamp(22px, 3vw, 34px) 0 0;
   animation: fadeIn 1s ease forwards;
 }
 
 .social-links a {
+  --social-color: var(--navy);
+  --social-bg: rgba(232,214,199,0.84);
   position: relative;
   width: 48px;
   height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--navy);
-  background: rgba(232,214,199,0.84);
+  color: var(--social-color);
+  background: var(--social-bg);
   border: 2px solid rgba(31,47,107,0.2);
+  border: 2px solid color-mix(in srgb, var(--social-color) 34%, transparent);
   border-radius: 50%;
   box-shadow: 4px 5px 0 rgba(31,47,107,0.12);
   transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
@@ -517,11 +560,48 @@ p.bio {
 
 .social-links a:hover,
 .social-links a:focus-visible {
-  color: var(--cloak);
+  color: var(--social-color);
   background: rgba(255,255,255,0.74);
+  background: color-mix(in srgb, var(--social-bg) 76%, white);
   transform: translateY(-4px) rotate(-4deg);
   box-shadow: 6px 8px 0 rgba(31,47,107,0.14);
+  box-shadow: 6px 8px 0 color-mix(in srgb, var(--social-color) 18%, transparent);
   outline: none;
+}
+
+.social-instagram {
+  --social-color: #d62976;
+  --social-bg: linear-gradient(135deg, rgba(252,175,69,0.3), rgba(214,41,118,0.24), rgba(79,91,213,0.22));
+}
+
+.social-tiktok {
+  --social-color: #111111;
+  --social-bg: linear-gradient(135deg, rgba(37,244,238,0.24), rgba(255,255,255,0.72), rgba(254,44,85,0.24));
+}
+
+.social-youtube {
+  --social-color: #ff0033;
+  --social-bg: rgba(255,0,51,0.12);
+}
+
+.social-twitch {
+  --social-color: #9146ff;
+  --social-bg: rgba(145,70,255,0.14);
+}
+
+.social-discord {
+  --social-color: #5865f2;
+  --social-bg: rgba(88,101,242,0.14);
+}
+
+.social-patronite {
+  --social-color: #f15a24;
+  --social-bg: rgba(241,90,36,0.14);
+}
+
+.social-suppi {
+  --social-color: #6c39ff;
+  --social-bg: rgba(108,57,255,0.14);
 }
 
 .social-links svg {
@@ -532,6 +612,31 @@ p.bio {
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.social-links text {
+  fill: currentColor;
+  stroke: none;
+  font-family: var(--font-funky);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.social-logo {
+  display: block;
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+}
+
+.social-logo-patronite {
+  width: 22px;
+  height: 28px;
+}
+
+.social-logo-suppi {
+  width: 28px;
+  height: 28px;
 }
 
 .asset-link {
@@ -809,8 +914,8 @@ p.bio {
   }
 
   .social-links a {
-    width: 43px;
-    height: 43px;
+    width: 42px;
+    height: 42px;
   }
 
   .social-links a:hover,
@@ -821,6 +926,21 @@ p.bio {
   .social-links svg {
     width: 23px;
     height: 23px;
+  }
+
+  .social-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-logo-patronite {
+    width: 20px;
+    height: 25px;
+  }
+
+  .social-logo-suppi {
+    width: 25px;
+    height: 25px;
   }
 }
 
