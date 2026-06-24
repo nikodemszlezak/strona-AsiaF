@@ -532,8 +532,8 @@ p.bio {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  width: min(460px, calc(100vw - 32px));
+  gap: 14px;
+  width: min(680px, calc(100vw - 32px));
   height: auto;
   margin: clamp(22px, 3vw, 34px) 0 0;
   animation: fadeIn 1s ease forwards;
@@ -543,8 +543,8 @@ p.bio {
   --social-color: var(--navy);
   --social-bg: rgba(232,214,199,0.84);
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 72px;
+  height: 72px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -605,14 +605,23 @@ p.bio {
 }
 
 .social-links svg {
-  width: 26px;
-  height: 26px;
+  width: 39px;
+  height: 39px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+.social-instagram svg { stroke: #d62976; }
+.social-tiktok svg {
+  stroke: #111111;
+  filter: drop-shadow(1.5px 0 0 #25f4ee) drop-shadow(-1.5px 0 0 #fe2c55);
+}
+.social-youtube svg { stroke: #ff0033; }
+.social-twitch svg { stroke: #9146ff; }
+.social-discord svg { stroke: #5865f2; }
 
 .social-links text {
   fill: currentColor;
@@ -624,19 +633,19 @@ p.bio {
 
 .social-logo {
   display: block;
-  width: 27px;
-  height: 27px;
+  width: 41px;
+  height: 41px;
   object-fit: contain;
 }
 
 .social-logo-patronite {
-  width: 22px;
-  height: 28px;
+  width: 33px;
+  height: 42px;
 }
 
 .social-logo-suppi {
-  width: 28px;
-  height: 28px;
+  width: 42px;
+  height: 42px;
 }
 
 .asset-link {
@@ -666,7 +675,6 @@ p.bio {
 }
 
 .asset-about {
-  position: fixed;
   right: clamp(6px, 3vw, 38px);
   bottom: clamp(8px, 2.5vh, 28px);
   width: clamp(130px, 16vw, 210px);
@@ -676,6 +684,7 @@ p.bio {
 
 .asset-link:hover,
 .asset-link:focus-visible,
+.asset-link:active,
 .asset-link.touch-hover {
   filter: drop-shadow(0 24px 28px rgba(0,0,0,0.2));
   outline: none;
@@ -683,18 +692,21 @@ p.bio {
 
 .asset-shop:hover,
 .asset-shop:focus-visible,
+.asset-shop:active,
 .asset-shop.touch-hover {
   transform: translateY(calc(-50% - 8px)) scale(1.04) rotate(-15deg);
 }
 
 .asset-contact:hover,
 .asset-contact:focus-visible,
+.asset-contact:active,
 .asset-contact.touch-hover {
   transform: translateY(-8px) scale(1.04) rotate(14deg);
 }
 
 .asset-about:hover,
 .asset-about:focus-visible,
+.asset-about:active,
 .asset-about.touch-hover {
   transform: translateY(-8px) scale(1.04) rotate(15deg);
 }
@@ -791,6 +803,27 @@ p.bio {
   mask-repeat: no-repeat;
 }
 
+.asset-shop:hover::after,
+.asset-shop:focus-visible::after,
+.asset-shop:active::after,
+.asset-shop.touch-hover::after {
+  mask-image: url("graphics/miś stan 2.png");
+}
+
+.asset-contact:hover::after,
+.asset-contact:focus-visible::after,
+.asset-contact:active::after,
+.asset-contact.touch-hover::after {
+  mask-image: url("graphics/telefon stan 2.png");
+}
+
+.asset-about:hover::after,
+.asset-about:focus-visible::after,
+.asset-about:active::after,
+.asset-about.touch-hover::after {
+  mask-image: url("graphics/asia usta zamkniete.png");
+}
+
 .asset-state {
   position: absolute;
   inset: 0;
@@ -809,12 +842,14 @@ p.bio {
 
 .asset-link:hover .asset-state-base,
 .asset-link:focus-visible .asset-state-base,
+.asset-link:active .asset-state-base,
 .asset-link.touch-hover .asset-state-base {
   opacity: 0;
 }
 
 .asset-link:hover .asset-state-hover,
 .asset-link:focus-visible .asset-state-hover,
+.asset-link:active .asset-state-hover,
 .asset-link.touch-hover .asset-state-hover {
   opacity: 1;
   transform: scale(1);
@@ -914,8 +949,8 @@ p.bio {
   }
 
   .social-links a {
-    width: 42px;
-    height: 42px;
+    width: 63px;
+    height: 63px;
   }
 
   .social-links a:hover,
@@ -924,23 +959,23 @@ p.bio {
   }
 
   .social-links svg {
-    width: 23px;
-    height: 23px;
+    width: 35px;
+    height: 35px;
   }
 
   .social-logo {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
   }
 
   .social-logo-patronite {
-    width: 20px;
-    height: 25px;
+    width: 30px;
+    height: 38px;
   }
 
   .social-logo-suppi {
-    width: 25px;
-    height: 25px;
+    width: 38px;
+    height: 38px;
   }
 }
 

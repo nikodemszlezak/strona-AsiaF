@@ -63,7 +63,6 @@
       // Jeśli urządzenie nie obsługuje hover, oznaczamy body i uruchamiamy animacje startowe.
       (function () {
         const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches || "ontouchstart" in window;
-        const touchAssets = document.querySelectorAll(".asset-link");
         const entranceAssets = document.querySelectorAll(".asset-shop, .asset-contact, .asset-about");
         if (isTouch) document.body.classList.add("is-touch");
         entranceAssets.forEach((asset) => {
@@ -72,11 +71,6 @@
             asset.classList.remove("asset-animating");
           }, { once: true });
         });
-        if (isTouch) {
-          touchAssets.forEach((asset) => {
-            asset.addEventListener("click", () => asset.classList.add("touch-hover"), { once: true });
-          });
-        }
       })();
     </script>
   </body>
