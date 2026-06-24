@@ -1,1 +1,1 @@
-# Strona Nikodem – start
+# © 2026 asiaf kornelia
