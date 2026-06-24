@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="asiaf_kornelia — kontakt, Instagram, TikTok, YouTube, Twitch, Discord, psotko.studio, sklep (wkrótce)." />
-    <meta name="keywords" content="asiaf_kornelia, asiaf, kornelia, kontakt, instagram, tiktok, youtube, twitch, discord, psotko studio, sklep, content, handmade, DIY, upcycling" />
+    <meta name="description" content="asiaf_kornelia — kontakt, Instagram, TikTok, YouTube, Twitch, Discord, sklep (wkrótce)." />
+    <meta name="keywords" content="asiaf_kornelia, asiaf, kornelia, kontakt, instagram, tiktok, youtube, twitch, discord, sklep, content, handmade, DIY, upcycling" />
     <meta name="robots" content="index,follow" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <title>asiaf_kornelia</title>
   </head>
-  <body>
+  <body class="home">
     <div class="scene">
       <div class="static-noise"></div>
       <div class="paper-fibers"></div>
@@ -18,24 +18,38 @@
       <div class="tear left"></div>
       <div class="tear right"></div>
       <div class="blobs blob-left"></div>
-      <a href="/o-mnie.html" class="blob-about" aria-label="Przejdź do strony o mnie">
-        <img src="graphics/asia.png" alt="asiaf_kornelia" class="about-base" />
-        <img src="graphics/usta_zamkniete.png" alt="" class="mouth mouth-closed" />
-        <img src="graphics/usta_otwarte.png" alt="" class="mouth mouth-open" />
+      <a href="https://sklepik.asiaf.net/" class="asset-link asset-shop" aria-label="Przejdź do sklepu">
+        <img src="graphics/miś stan 1.png" alt="" class="asset-state asset-state-base" />
+        <img src="graphics/miś stan 2.png" alt="" class="asset-state asset-state-hover" />
       </a>
-      <main>
+      <a href="mailto:hi@asiaf.net" class="asset-link asset-contact" aria-label="Napisz wiadomość">
+        <img src="graphics/telefon stan 1.png" alt="" class="asset-state asset-state-base" />
+        <img src="graphics/telefon stan 2.png" alt="" class="asset-state asset-state-hover" />
+      </a>
+      <a href="/o-mnie.html" class="asset-link asset-about" aria-label="Przejdź do strony o mnie">
+        <img src="graphics/asia usta otwarte.png" alt="asiaf_kornelia" class="asset-state asset-state-base" />
+        <img src="graphics/asia usta zamkniete.png" alt="" class="asset-state asset-state-hover" />
+      </a>
+      <main class="home-main">
         <h1>asiaf_kornelia</h1>
         <p class="bio">🦔 jestem tu, by was bawić i dezorientować 🎠</p>
-        <div class="links">
-          <a href="mailto:hi@asiaf.net">kontakt</a>
-          <a href="https://www.instagram.com/asiaf_kornelia/" target="_blank">instagram</a>
-          <a href="https://www.tiktok.com/@asiaf_kornelia" target="_blank">tiktok</a>
-          <a href="https://www.youtube.com/@asiaf_kornelia" target="_blank">youtube</a>
-          <a href="https://www.twitch.tv/asiaf_kornelia" target="_blank">twitch</a>
-          <a href="https://discord.com/invite/2psHhXfHqM" target="_blank">discord</a>
-          <a href="https://www.instagram.com/psotko.studio/" target="_blank">psotko.studio</a>
-          <a href="https://sklepik.asiaf.net/">sklep</a>
-        </div>
+        <nav class="social-links" aria-label="Media społecznościowe">
+          <a href="https://www.instagram.com/asiaf_kornelia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="16.8" cy="7.2" r="1"></circle></svg>
+          </a>
+          <a href="https://www.tiktok.com/@asiaf_kornelia" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a4.2 4.2 0 1 1-4.2-4.2"></path><path d="M14 4c.8 3 2.7 4.8 6 5"></path></svg>
+          </a>
+          <a href="https://www.youtube.com/@asiaf_kornelia" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8.2c.2-1.2 1.1-2 2.3-2.2 3.4-.4 7-.4 10.4 0 1.2.2 2.1 1 2.3 2.2.4 2.5.4 5.1 0 7.6-.2 1.2-1.1 2-2.3 2.2-3.4.4-7 .4-10.4 0-1.2-.2-2.1-1-2.3-2.2-.4-2.5-.4-5.1 0-7.6Z"></path><path d="m10.5 9 5 3-5 3V9Z"></path></svg>
+          </a>
+          <a href="https://www.twitch.tv/asiaf_kornelia" target="_blank" rel="noopener noreferrer" aria-label="Twitch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h14v10l-4 4h-4l-3 3v-3H6V4Z"></path><path d="M10 8v5"></path><path d="M15 8v5"></path></svg>
+          </a>
+          <a href="https://discord.com/invite/2psHhXfHqM" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 8.2c2.8-1.1 6.2-1.1 9 0l1 6.6c-2.8 2-8.2 2-11 0l1-6.6Z"></path><path d="M9 8.5 8 6"></path><path d="m15 8.5 1-2.5"></path><circle cx="10" cy="12" r=".8"></circle><circle cx="14" cy="12" r=".8"></circle></svg>
+          </a>
+        </nav>
       </main>
       <footer>© 2025 asiaf_kornelia</footer>
     </div>
@@ -43,22 +57,19 @@
       // Jeśli urządzenie nie obsługuje hover, oznaczamy body i uruchamiamy animacje startowe.
       (function () {
         const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches || "ontouchstart" in window;
-        const blob = document.querySelector(".blob-about");
+        const touchAssets = document.querySelectorAll(".asset-link");
+        const entranceAssets = document.querySelectorAll(".asset-shop, .asset-contact, .asset-about");
         if (isTouch) document.body.classList.add("is-touch");
-        if (blob && !isTouch) {
-          blob.classList.add("blob-animating");
-          blob.addEventListener("animationend", () => {
-            blob.classList.remove("blob-animating");
+        entranceAssets.forEach((asset) => {
+          asset.classList.add("asset-animating");
+          asset.addEventListener("animationend", () => {
+            asset.classList.remove("asset-animating");
           }, { once: true });
-        } else if (blob && isTouch) {
-          let hoverApplied = false;
-          const applyHoverState = () => {
-            if (hoverApplied) return;
-            hoverApplied = true;
-            blob.classList.add("touch-hover");
-          };
-          blob.addEventListener("animationend", applyHoverState, { once: true });
-          setTimeout(applyHoverState, 1200);
+        });
+        if (isTouch) {
+          touchAssets.forEach((asset) => {
+            asset.addEventListener("click", () => asset.classList.add("touch-hover"), { once: true });
+          });
         }
       })();
     </script>
