@@ -651,7 +651,7 @@ p.bio {
 .asset-link {
   display: block;
   position: absolute;
-  z-index: 4;
+  z-index: 12;
   text-decoration: none;
   filter: drop-shadow(0 18px 24px rgba(0,0,0,0.16));
   transition: transform 0.24s ease, filter 0.24s ease;
@@ -855,6 +855,12 @@ p.bio {
   transform: scale(1);
 }
 
+body.is-touch .asset-link:not(.asset-animating)::before {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(-1deg);
+  animation: tooltipPopIn 320ms cubic-bezier(0.2, 0.9, 0.24, 1.18) both;
+}
+
 @media (max-width: 900px) {
   body.home {
     overflow-y: auto;
@@ -889,13 +895,13 @@ p.bio {
 
   .asset-shop {
     left: 4px;
-    top: 72%;
+    top: 78%;
     width: clamp(110px, 31.25vw, 173px);
   }
 
   .asset-contact {
     right: 2px;
-    top: 92px;
+    top: 48px;
     width: clamp(160px, 45vw, 238px);
   }
 
@@ -942,10 +948,12 @@ p.bio {
 
   .asset-shop {
     width: clamp(95px, 28.75vw, 133px);
+    top: 82%;
   }
 
   .asset-contact {
     width: clamp(138px, 42vw, 190px);
+    top: 24px;
   }
 
   .social-links a {
@@ -999,6 +1007,21 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tooltipPopIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px) rotate(-3deg) scale(0.88);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -2px) rotate(-1deg) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) rotate(-1deg) scale(1);
+  }
 }
 
 @keyframes jitter {
