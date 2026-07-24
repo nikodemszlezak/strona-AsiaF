@@ -362,6 +362,8 @@ p.bio {
 }
 
 body.about-page {
+  display: block;
+  min-height: 100%;
   overflow-y: auto;
 }
 
@@ -1055,6 +1057,8 @@ body.is-touch .asset-link:not(.asset-animating)::before {
 
   .about-photo {
     width: min(270px, 58vw);
+    width: min(270px, 58vw, 31.5svh);
+    max-height: min(360px, 42svh);
   }
 
   .about-page .asset-contact {
@@ -1071,6 +1075,8 @@ body.is-touch .asset-link:not(.asset-animating)::before {
 
   .about-main .bio {
     width: 100%;
+    padding: 28px 30px 30px;
+    clip-path: polygon(1% 6%, 11% 3%, 34% 2%, 58% 4%, 86% 2%, 99% 9%, 99% 90%, 91% 97%, 64% 98%, 40% 96%, 12% 99%, 1% 91%);
   }
 }
 
@@ -1079,6 +1085,10 @@ body.is-touch .asset-link:not(.asset-animating)::before {
   .about-page .scene {
     justify-content: center;
     padding-top: 16px;
+  }
+
+  .about-page .scene {
+    justify-content: flex-start;
   }
 
   .home-main h1 {
@@ -1102,8 +1112,9 @@ body.is-touch .asset-link:not(.asset-animating)::before {
 
   .about-main .bio {
     font-size: clamp(0.9rem, 4vw, 1rem);
-    padding: 20px 18px 22px;
+    padding: 28px 26px 28px;
     line-height: 1.52;
+    clip-path: polygon(1% 5%, 12% 2%, 34% 2%, 58% 4%, 86% 2%, 99% 8%, 99% 91%, 91% 97%, 64% 98%, 40% 96%, 12% 99%, 1% 92%);
   }
 
   .about-content {
@@ -1113,6 +1124,8 @@ body.is-touch .asset-link:not(.asset-animating)::before {
 
   .about-photo {
     width: min(232px, 62vw);
+    width: min(232px, 62vw, 28.5svh);
+    max-height: min(310px, 38svh);
   }
 
   .about-page .asset-shop {
